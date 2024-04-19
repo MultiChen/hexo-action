@@ -64,7 +64,7 @@ jobs:
     
     # Caching dependencies to speed up workflows. (GitHub will remove any cache entries that have not been accessed in over 7 days.)
     - name: Cache node modules
-      uses: actions/cache@v1
+      uses: actions/cache@v4
       id: cache
       with:
         path: node_modules
@@ -78,7 +78,7 @@ jobs:
     # Deploy hexo blog website.
     - name: Deploy
       id: deploy
-      uses: sma11black/hexo-action@v1.0.3
+      uses: MultiChen/hexo-action@v1.0.4
       with:
         deploy_key: ${{ secrets.DEPLOY_KEY }}
         user_name: your github username  # (or delete this input setting to use bot account)
